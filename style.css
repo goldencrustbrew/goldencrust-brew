@@ -1,0 +1,386 @@
+/* =========================================
+   Golden Crust & Brew - Theme System
+   Rustic Minimalist (Cream, Warm Brown, Beige)
+   ========================================= */
+
+:root {
+    --clr-cream: #FAF7F2;      /* Main Background */
+    --clr-beige: #F0EAE1;      /* Secondary Background for alternating sections */
+    --clr-coffee: #3E2723;     /* Dark Coffee for primary text */
+    --clr-brown: #8D6E63;      /* Warm Brown for secondary text/borders */
+    --clr-caramel: #D4A373;    /* Accent Caramel for buttons and highlights */
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    --font-vibe: 'Dancing Script', cursive;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--clr-coffee);
+    background-color: var(--clr-cream);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 5%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-beige {
+    background-color: var(--clr-beige);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--clr-coffee);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--clr-coffee);
+    margin-bottom: 40px;
+}
+
+/* =========================================
+   Navigation
+   ========================================= */
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 5%;
+    background: linear-gradient(to bottom, rgba(62, 39, 35, 0.6), transparent);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-main {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--clr-cream);
+}
+
+.brand-sub {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--clr-caramel);
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--clr-cream);
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--clr-caramel);
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -2;
+}
+
+.bg-video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(62, 39, 35, 0.4); /* Dark Coffee tint */
+    z-index: -1;
+}
+
+.hero-content {
+    color: var(--clr-cream);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    color: var(--clr-cream);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-italic {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--clr-caramel);
+}
+
+.sub-headline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.cta-button, .order-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--clr-caramel);
+    color: var(--clr-cream);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover, .order-btn:hover {
+    background-color: var(--clr-coffee);
+    color: var(--clr-cream);
+}
+
+/* =========================================
+   About Us Section
+   ========================================= */
+.about-text {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--clr-brown);
+}
+
+.signature-line {
+    font-family: var(--font-vibe);
+    font-size: 2.2rem;
+    color: var(--clr-caramel);
+    margin-top: 30px;
+}
+
+/* =========================================
+   Menu Section
+   ========================================= */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background-color: var(--clr-cream);
+    border: 1px solid rgba(141, 110, 99, 0.2);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(62, 39, 35, 0.05);
+}
+
+.menu-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.price {
+    font-weight: 500;
+    color: var(--clr-caramel);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.vibe-text {
+    font-family: var(--font-vibe);
+    font-size: 1.5rem;
+    color: var(--clr-brown);
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.order-btn {
+    font-size: 0.9rem;
+    padding: 10px 25px;
+}
+
+/* =========================================
+   Stories / Blog Section
+   ========================================= */
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    border-bottom: 1px solid var(--clr-beige);
+    padding-bottom: 40px;
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.blog-title {
+    font-size: 1.8rem;
+    font-weight: bold; /* Per your request */
+    color: var(--clr-coffee);
+    margin-bottom: 20px;
+}
+
+.blog-content p {
+    margin-bottom: 20px;
+    color: var(--clr-brown);
+}
+
+/* =========================================
+   Team Section
+   ========================================= */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.team-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.team-card .role {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-caramel);
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   Footer / Contact Section
+   ========================================= */
+.footer-section {
+    background-color: var(--clr-coffee);
+    color: var(--clr-cream);
+}
+
+.footer-section h2, .footer-section h3 {
+    color: var(--clr-cream);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(250, 247, 242, 0.1);
+}
+
+.contact-details {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.contact-details li {
+    margin-bottom: 10px;
+}
+
+.contact-details a {
+    color: var(--clr-caramel);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.social-btn {
+    color: var(--clr-cream);
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--clr-caramel);
+    padding-bottom: 2px;
+    transition: color 0.3s;
+}
+
+.social-btn:hover {
+    color: var(--clr-caramel);
+}
+
+.footer-bottom {
+    padding: 30px 5%;
+    font-size: 0.9rem;
+    color: rgba(250, 247, 242, 0.7);
+}
+
+.footer-note {
+    font-family: var(--font-vibe);
+    font-size: 1.5rem;
+    color: var(--clr-caramel);
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Add a hamburger menu later if needed */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+  }
